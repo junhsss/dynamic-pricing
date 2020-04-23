@@ -1,0 +1,35 @@
+name: VAE Pretrain
+program: pretrain.py
+method: random
+metric:
+  goal: minimize
+  name: VAE Loss
+parameters:
+  vae_hidden_dim:
+    distribution: int_uniform
+    min: 50
+    max: 1000
+  vae_depth:
+    distribution: int_uniform
+    min: 1
+    max: 4
+  vae_decay:
+    distribution: log_uniform
+    min: -12
+    max: -2
+  vae_factor:
+    distribution: uniform
+    min: 0.7
+    max: 1
+  vae_lr:
+    distribution: log_uniform
+    min: -12
+    max: -4
+  vae_latent_dim:
+    distribution: int_uniform
+    min: 5
+    max: 200
+  batch_size:
+    distribution: int_uniform
+    min: 64
+    max: 1024

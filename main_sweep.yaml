@@ -1,0 +1,84 @@
+name: Batch Constraint Q-Learning
+program: main.py
+method: random
+
+metric:
+  goal: minimize
+  name: 'Signs'
+parameters:
+  actor_hidden_dim:
+    distribution: int_uniform
+    min: 50
+    max: 1400
+  actor_depth:
+    distribution: int_uniform
+    min: 1
+    max: 5
+  actor_decay:
+    distribution: log_uniform
+    min: -12
+    max: -2
+  actor_factor:
+    distribution: uniform
+    min: 0.7
+    max: 1
+  actor_lr:
+    distribution: log_uniform
+    min: -12
+    max: -6
+    
+  critic_hidden_dim:
+    distribution: int_uniform
+    min: 50
+    max: 1400
+  critic_depth:
+    distribution: int_uniform
+    min: 1
+    max: 5
+  critic_decay:
+    distribution: log_uniform
+    min: -12
+    max: -2
+  critic_factor:
+    distribution: uniform
+    min: 0.7
+    max: 1
+  critic_lr:
+    distribution: log_uniform
+    min: -12
+    max: -6
+
+  tau:
+    distribution: log_uniform
+    min: -8
+    max: -4
+    
+  batch_size:
+    distribution: int_uniform
+    min: 64
+    max: 2048
+
+  phi:
+    distribution: log_uniform
+    min: -5
+    max: -2.5
+    
+  lamb:
+    distribution: log_uniform
+    min: -8
+    max: -4
+
+  policy_delay:
+    distribution: int_uniform
+    min: 1
+    max: 8
+    
+  noise_std:
+    distribution: log_uniform
+    min: -8
+    max: -2
+  
+  noise_clip:
+    distribution: log_uniform
+    min: -9
+    max: -4
